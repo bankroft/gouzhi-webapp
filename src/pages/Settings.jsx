@@ -43,7 +43,11 @@ const Settings = () => {
             setStatus({ type: 'success', msg: 'Connection successful!' });
             loadBackupsList();
         } catch (e) {
-            setStatus({ type: 'error', msg: 'Connection failed: ' + e.message });
+            setStatus({ type: 'error', msg: `Connection failed: ${e.message}`, error: e });
+            console.error(e);
+            if (e.message.includes('Network Error') || e.message.includes('Failed to fetch')) {
+                alert("Network Error: This is likely a CORS issue. Your WebDAV server must allow requests from this origin.");
+            }
         } finally {
             setLoading(false);
         }
@@ -68,7 +72,7 @@ const Settings = () => {
             setStatus({ type: 'success', msg: `Backup uploaded: ${filename}` });
             loadBackupsList();
         } catch (e) {
-            setStatus({ type: 'error', msg: 'Backup failed: ' + e.message });
+            setStatus({ type: 'error', msg: 'Backup failed: ' + e.message, error: e });
         } finally {
             setLoading(false);
         }
@@ -82,7 +86,7 @@ const Settings = () => {
             const count = await importData(data);
             setStatus({ type: 'success', msg: `Restored ${count} items successfully.` });
         } catch (e) {
-            setStatus({ type: 'error', msg: 'Restore failed: ' + e.message });
+            setStatus({ type: 'error', msg: 'Restore failed: ' + e.message, error: e });
         } finally {
             setLoading(false);
         }
@@ -110,7 +114,7 @@ const Settings = () => {
                 const count = await importData(json);
                 setStatus({ type: 'success', msg: `Imported ${count} items.` });
             } catch (err) {
-                setStatus({ type: 'error', msg: 'Import failed: ' + err.message });
+                setStatus({ type: 'error', msg: 'Import failed: ' + err.message, error: err });
             } finally {
                 setLoading(false);
             }
@@ -131,7 +135,19 @@ const Settings = () => {
                     display: 'flex', alignItems: 'center', gap: '8px'
                 }}>
                     {status.type === 'success' ? <CheckCircle size={20} /> : <AlertCircle size={20} />}
-                    {status.msg}
+                    <span style={{ flex: 1 }}>{status.msg}</span>
+                    {status.error && (
+                        <button
+                            onClick={() => alert(JSON.stringify(status.error, Object.getOwnPropertyNames(status.error), 2))}
+                            style={{
+                                padding: '4px 8px', fontSize: '0.75rem',
+                                background: 'rgba(0,0,0,0.1)', border: 'none', borderRadius: '4px',
+                                cursor: 'pointer', fontWeight: 600
+                            }}
+                        >
+                            DETAILS
+                        </button>
+                    )}
                 </div>
             )}
 
@@ -194,6 +210,9 @@ const Settings = () => {
             {/* WebDAV Settings */}
             <div className="card" style={{ marginBottom: 'var(--spacing-md)' }}>
                 <h3>{t('settings.webdav')}</h3>
+                <div style={{ background: '#fffbeb', color: '#92400e', padding: '8px', borderRadius: '4px', fontSize: '0.8rem', marginBottom: '12px', border: '1px solid #fcd34d' }}>
+                    <strong>Note:</strong> Verify your WebDAV server allows CORS requests. Many servers (like Nextcloud) block browser requests by default.
+                </div>
                 <p style={{ fontSize: '0.9rem', color: 'var(--text-muted)', marginBottom: '12px' }}>Connect to your Nextcloud/WebDAV server.</p>
 
                 <div style={{ display: 'flex', flexDirection: 'column', gap: '12px' }}>
@@ -262,6 +281,12 @@ const Settings = () => {
                         <input type="file" accept=".json" onChange={handleLocalImport} style={{ display: 'none' }} />
                     </label>
                 </div>
+            </div>
+
+            {/* Version Info */}
+            <div className="card" style={{ marginTop: 'var(--spacing-md)', textAlign: 'center', color: 'var(--text-muted)', fontSize: '0.8rem' }}>
+                <p>{t('settings.about')}</p>
+                <p>{t('settings.version')}: {__APP_VERSION__} ({__GIT_REVISION__})</p>
             </div>
 
         </div>

@@ -98,6 +98,8 @@
         "dataSync": "数据同步与备份",
         "webdav": "WebDAV 同步",
         "localBackup": "本地备份",
+        "about": "关于",
+        "version": "版本",
         "export": "导出 JSON",
         "import": "导入 JSON"
     }

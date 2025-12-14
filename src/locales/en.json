@@ -98,6 +98,8 @@
         "dataSync": "Data Sync & Backup",
         "webdav": "WebDAV Sync",
         "localBackup": "Local Backup",
+        "about": "About",
+        "version": "Version",
         "export": "Export JSON",
         "import": "Import JSON"
     }
