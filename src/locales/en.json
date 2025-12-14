@@ -1,0 +1,104 @@
+{
+    "nav": {
+        "home": "Home",
+        "patterns": "Patterns",
+        "projects": "Projects",
+        "inventory": "Inventory",
+        "finished": "Finished",
+        "settings": "Settings"
+    },
+    "common": {
+        "add": "Add",
+        "save": "Save",
+        "cancel": "Cancel",
+        "delete": "Delete",
+        "edit": "Edit",
+        "search": "Search...",
+        "loading": "Loading...",
+        "confirmDelete": "Are you sure you want to delete this item?",
+        "noData": "No data found."
+    },
+    "dashboard": {
+        "title": "Dashboard",
+        "totalPatterns": "Total Patterns",
+        "activeProjects": "Active Projects",
+        "yarnStash": "Yarn Stash",
+        "finishedWorks": "Finished Works"
+    },
+    "patterns": {
+        "title": "Patterns",
+        "addTitle": "Add Pattern",
+        "editTitle": "Edit Pattern",
+        "form": {
+            "title": "Title",
+            "category": "Category",
+            "difficulty": "Difficulty",
+            "hookSize": "Hook Size (mm)",
+            "tags": "Tags (comma separated)",
+            "notes": "Notes",
+            "images": "Images",
+            "content": "Instructions",
+            "upload": "Upload"
+        }
+    },
+    "projects": {
+        "title": "Projects",
+        "addTitle": "Start Project",
+        "editTitle": "Edit Project",
+        "status": {
+            "plan": "Planning",
+            "in_progress": "In Progress",
+            "paused": "Paused",
+            "completed": "Completed"
+        },
+        "form": {
+            "name": "Project Name",
+            "status": "Status",
+            "startDate": "Start Date",
+            "pattern": "Pattern",
+            "progress": "Progress"
+        }
+    },
+    "inventory": {
+        "title": "Yarn Inventory",
+        "addTitle": "Add Yarn",
+        "editTitle": "Edit Yarn",
+        "form": {
+            "brand": "Brand / Name",
+            "color": "Color Name/Code",
+            "material": "Material",
+            "weight": "Weight",
+            "stock": "Stock",
+            "unit": "Unit",
+            "picker": "Color Picker"
+        }
+    },
+    "finished": {
+        "title": "Finished Works",
+        "addTitle": "Record Finished Work",
+        "editTitle": "Edit Finished Work",
+        "form": {
+            "name": "Name",
+            "date": "Completion Date",
+            "time": "Time Spent",
+            "rating": "Satisfaction",
+            "pattern": "Pattern Used"
+        }
+    },
+    "settings": {
+        "title": "Settings",
+        "appearance": "Appearance",
+        "theme": "Theme",
+        "language": "Language",
+        "themes": {
+            "light": "Light",
+            "dark": "Dark",
+            "system": "System"
+        },
+        "dataSync": "Data Sync & Backup",
+        "webdav": "WebDAV Sync",
+        "localBackup": "Local Backup",
+        "export": "Export JSON",
+        "import": "Import JSON"
+    }
+}

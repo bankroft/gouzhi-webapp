@@ -1,0 +1,104 @@
+{
+    "nav": {
+        "home": "首页",
+        "patterns": "图解",
+        "projects": "项目",
+        "inventory": "库存",
+        "finished": "成品",
+        "settings": "设置"
+    },
+    "common": {
+        "add": "添加",
+        "save": "保存",
+        "cancel": "取消",
+        "delete": "删除",
+        "edit": "编辑",
+        "search": "搜索...",
+        "loading": "加载中...",
+        "confirmDelete": "确定要删除在这个项目吗？",
+        "noData": "暂无数据"
+    },
+    "dashboard": {
+        "title": "概览",
+        "totalPatterns": "图解总数",
+        "activeProjects": "进行中项目",
+        "yarnStash": "毛线库存",
+        "finishedWorks": "已完成作品"
+    },
+    "patterns": {
+        "title": "图解库",
+        "addTitle": "添加图解",
+        "editTitle": "编辑图解",
+        "form": {
+            "title": "标题",
+            "category": "分类",
+            "difficulty": "难度",
+            "hookSize": "钩针大小 (mm)",
+            "tags": "标签 (逗号分隔)",
+            "notes": "备注",
+            "images": "图片",
+            "content": "图解教程",
+            "upload": "上传"
+        }
+    },
+    "projects": {
+        "title": "项目管理",
+        "addTitle": "新建项目",
+        "editTitle": "编辑项目",
+        "status": {
+            "plan": "计划中",
+            "in_progress": "进行中",
+            "paused": "暂停",
+            "completed": "已完成"
+        },
+        "form": {
+            "name": "项目名称",
+            "status": "状态",
+            "startDate": "开始日期",
+            "pattern": "关联图解",
+            "progress": "进度"
+        }
+    },
+    "inventory": {
+        "title": "毛线库存",
+        "addTitle": "添加毛线",
+        "editTitle": "编辑库存",
+        "form": {
+            "brand": "品牌 / 名称",
+            "color": "色号 / 颜色",
+            "material": "材质",
+            "weight": "粗细 / 规格",
+            "stock": "库存数量",
+            "unit": "单位",
+            "picker": "颜色选择"
+        }
+    },
+    "finished": {
+        "title": "成品展示",
+        "addTitle": "记录成品",
+        "editTitle": "编辑成品",
+        "form": {
+            "name": "作品名称",
+            "date": "完成日期",
+            "time": "耗时",
+            "rating": "满意度",
+            "pattern": "使用图解"
+        }
+    },
+    "settings": {
+        "title": "设置",
+        "appearance": "外观与语言",
+        "theme": "主题",
+        "language": "语言",
+        "themes": {
+            "light": "浅色",
+            "dark": "深色",
+            "system": "跟随系统"
+        },
+        "dataSync": "数据同步与备份",
+        "webdav": "WebDAV 同步",
+        "localBackup": "本地备份",
+        "export": "导出 JSON",
+        "import": "导入 JSON"
+    }
+}
